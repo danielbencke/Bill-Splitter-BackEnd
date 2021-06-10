@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'ie.cct'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+java {
+    sourceCompatibility = JavaVersion.toVersion('8')
+    targetCompatibility = JavaVersion.toVersion('8')
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.0'
+	implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+	implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0'
+	implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.1'
+}
+
+test {
+	useJUnitPlatform()
+}
